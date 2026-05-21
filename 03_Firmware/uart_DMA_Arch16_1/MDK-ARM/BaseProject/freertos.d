@@ -1,7 +1,7 @@
 baseproject\freertos.o: ../Core/Src/freertos.c
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-baseproject\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-baseproject\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+baseproject\freertos.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stddef.h
+baseproject\freertos.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdint.h
 baseproject\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -39,8 +39,11 @@ baseproject\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 baseproject\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 baseproject\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 baseproject\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-baseproject\freertos.o: ..\easylogger\inc\elog.h
-baseproject\freertos.o: ..\easylogger\inc\elog_cfg.h
-baseproject\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+baseproject\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+baseproject\freertos.o: ../easylogger/inc/elog.h
+baseproject\freertos.o: ../easylogger/inc/elog_cfg.h
+baseproject\freertos.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+baseproject\freertos.o: ..\BSP\USART\bsp_uart_driver.h

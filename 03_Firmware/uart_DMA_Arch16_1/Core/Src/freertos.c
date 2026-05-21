@@ -22,10 +22,12 @@
 #include "task.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "queue.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bsp_uart_driver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,10 +49,27 @@
 /* USER CODE BEGIN Variables */
 
 /* USER CODE END Variables */
+
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+
+/* Definitions for Task_uart_rec_A */
+osThreadId_t Task_uart_rec_AHandle;
+const osThreadAttr_t Task_uart_rec_A_attributes = {
+  .name = "Task_uart_rec_A",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+
+/* Definitions for Task_uart_driver */
+osThreadId_t Task_uart_bsp_AHandle;
+const osThreadAttr_t Task_basp_uart_driver_attributes = {
+  .name = "Task_basp_uart_driver",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -61,6 +80,8 @@ const osThreadAttr_t defaultTask_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
+void uart_rec_A_function(void *argument);
+void uart_driver_func(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -92,8 +113,14 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  defaultTaskHandle     = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
+  /* creation of Task_uart_rec_A */
+  Task_uart_rec_AHandle = osThreadNew(uart_rec_A_function, NULL, &Task_uart_rec_A_attributes);
+
+  /* creation of Task_uart_driver */
+  Task_uart_bsp_AHandle = osThreadNew(uart_driver_func, NULL, &Task_basp_uart_driver_attributes);
+    
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -114,6 +141,7 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
+  log_i("StartDefaultTask is running");
   /* Infinite loop */
   for(;;)
   {
@@ -122,8 +150,26 @@ void StartDefaultTask(void *argument)
   /* USER CODE END StartDefaultTask */
 }
 
+// /* USER CODE BEGIN Header_uart_rec_A_function */
+// /**
+// * @brief Function implementing the Task_uart_rec_A thread.
+// * @param argument: Not used
+// * @retval None
+// */
+// /* USER CODE END Header_uart_rec_A_function */
+// void uart_rec_A_function(void *argument)
+// {
+//   /* USER CODE BEGIN uart_rec_A_function */
+//   log_i("Task_uart_rec_A is running");
+//   /* Infinite loop */
+//   for(;;)
+//   {
+//     osDelay(1);
+//   }
+//   /* USER CODE END uart_rec_A_function */
+// }
+
 /* Private application code --------------------------------------------------*/
-/* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
 

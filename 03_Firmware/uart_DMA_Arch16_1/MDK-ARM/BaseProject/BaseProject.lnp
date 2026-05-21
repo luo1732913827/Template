@@ -3,6 +3,7 @@
 "baseproject\main.o"
 "baseproject\gpio.o"
 "baseproject\freertos.o"
+"baseproject\usart.o"
 "baseproject\stm32f4xx_it.o"
 "baseproject\stm32f4xx_hal_msp.o"
 "baseproject\stm32f4xx_hal_timebase_tim.o"
@@ -21,6 +22,7 @@
 "baseproject\stm32f4xx_hal_exti.o"
 "baseproject\stm32f4xx_hal_tim.o"
 "baseproject\stm32f4xx_hal_tim_ex.o"
+"baseproject\stm32f4xx_hal_uart.o"
 "baseproject\system_stm32f4xx.o"
 "baseproject\croutine.o"
 "baseproject\event_groups.o"
@@ -32,6 +34,7 @@
 "baseproject\cmsis_os2.o"
 "baseproject\heap_4.o"
 "baseproject\port.o"
+"baseproject\mid_circular_buffer.o"
 "baseproject\segger_rtt.o"
 "baseproject\segger_rtt_printf.o"
 "baseproject\elog_port.o"
@@ -39,6 +42,8 @@
 "baseproject\elog_async.o"
 "baseproject\elog_buf.o"
 "baseproject\elog_utils.o"
+"baseproject\uart_parse_task.o"
+"baseproject\bsp_uart_driver.o"
 --strict --scatter "BaseProject\BaseProject.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

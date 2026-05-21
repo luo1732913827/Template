@@ -1,8 +1,8 @@
 baseproject\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-baseproject\cmsis_os2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+baseproject\cmsis_os2.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\string.h
 baseproject\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-baseproject\cmsis_os2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-baseproject\cmsis_os2.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+baseproject\cmsis_os2.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdint.h
+baseproject\cmsis_os2.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stddef.h
 baseproject\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 baseproject\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 baseproject\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -46,3 +46,4 @@ baseproject\cmsis_os2.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 baseproject\cmsis_os2.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 baseproject\cmsis_os2.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 baseproject\cmsis_os2.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+baseproject\cmsis_os2.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h

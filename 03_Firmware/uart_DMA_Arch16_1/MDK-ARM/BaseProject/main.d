@@ -7,7 +7,7 @@ baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 baseproject\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 baseproject\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 baseproject\main.o: ../Drivers/CMSIS/Include/core_cm4.h
-baseproject\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+baseproject\main.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdint.h
 baseproject\main.o: ../Drivers/CMSIS/Include/cmsis_version.h
 baseproject\main.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 baseproject\main.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -15,7 +15,7 @@ baseproject\main.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 baseproject\main.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-baseproject\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+baseproject\main.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stddef.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -30,9 +30,10 @@ baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-baseproject\main.o: ..\easylogger\inc\elog.h
-baseproject\main.o: ..\easylogger\inc\elog_cfg.h
-baseproject\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+baseproject\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+baseproject\main.o: ../easylogger/inc/elog.h
+baseproject\main.o: ../easylogger/inc/elog_cfg.h
+baseproject\main.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 baseproject\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -44,4 +45,5 @@ baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrapp
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+baseproject\main.o: ../Core/Inc/usart.h
 baseproject\main.o: ../Core/Inc/gpio.h

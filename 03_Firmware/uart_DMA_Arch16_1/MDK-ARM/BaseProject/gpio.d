@@ -8,7 +8,7 @@ baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 baseproject\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 baseproject\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h
 baseproject\gpio.o: ../Drivers/CMSIS/Include/core_cm4.h
-baseproject\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+baseproject\gpio.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdint.h
 baseproject\gpio.o: ../Drivers/CMSIS/Include/cmsis_version.h
 baseproject\gpio.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 baseproject\gpio.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ baseproject\gpio.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 baseproject\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-baseproject\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+baseproject\gpio.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stddef.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -31,6 +31,7 @@ baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
-baseproject\gpio.o: ..\easylogger\inc\elog.h
-baseproject\gpio.o: ..\easylogger\inc\elog_cfg.h
-baseproject\gpio.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+baseproject\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+baseproject\gpio.o: ../easylogger/inc/elog.h
+baseproject\gpio.o: ../easylogger/inc/elog_cfg.h
+baseproject\gpio.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
