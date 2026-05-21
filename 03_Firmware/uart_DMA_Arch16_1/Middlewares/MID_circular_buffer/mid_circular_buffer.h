@@ -11,7 +11,7 @@ typedef struct {
     uint16_t        tail;
 } circular_buffer_t;
 
-circular_buffer_t * createEmptyBuffer (void);
+circular_buffer_t * create_empty_circular_buffer (void);
 uint8_t buffer_is_empty (circular_buffer_t * p_buffer);
 uint8_t buffer_is_full (circular_buffer_t * p_buffer);
 uint8_t buffer_get_count (circular_buffer_t * p_buffer);

@@ -47,3 +47,5 @@ baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 baseproject\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 baseproject\freertos.o: ..\BSP\USART\bsp_uart_driver.h
+baseproject\freertos.o: ../Core/Inc/usart.h
+baseproject\freertos.o: ..\Middlewares\MID_circular_buffer\mid_circular_buffer.h
