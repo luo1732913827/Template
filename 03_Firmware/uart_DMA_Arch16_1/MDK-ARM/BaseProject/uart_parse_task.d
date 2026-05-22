@@ -17,8 +17,8 @@ baseproject\uart_parse_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/includ
 baseproject\uart_parse_task.o: ../easylogger/inc/elog.h
 baseproject\uart_parse_task.o: ../easylogger/inc/elog_cfg.h
 baseproject\uart_parse_task.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
-baseproject\uart_parse_task.o: ..\Middlewares\MID_circular_buffer\mid_circular_buffer.h
-baseproject\uart_parse_task.o: ..\BSP\USART\bsp_uart_driver.h
+baseproject\uart_parse_task.o: ../Middlewares/MID_circular_buffer/mid_circular_buffer.h
+baseproject\uart_parse_task.o: ../BSP/USART/bsp_uart_driver.h
 baseproject\uart_parse_task.o: ../Core/Inc/usart.h
 baseproject\uart_parse_task.o: ../Core/Inc/main.h
 baseproject\uart_parse_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h

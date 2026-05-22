@@ -27,7 +27,7 @@ void uart_driver_func(void *argument)
     /* USER CODE BEGIN uart_rec_A_function */
     log_i("Task_uart_driver is running");
     uint32_t receive_data = 0;
-    //创建接收数据缓冲区
+    //0.创建接收数据缓冲区
     g_circular_buffer_irq_thread = create_empty_circular_buffer();
     if(g_circular_buffer_irq_thread == NULL)
     {
@@ -42,30 +42,33 @@ void uart_driver_func(void *argument)
         log_e("xQueueCreate is queue_irq_thread malloc failed");
         return;
     }
-		
-		HAL_StatusTypeDef ret = HAL_OK;
-		ret = HAL_UART_Receive_IT(&huart1, &g_data_buffer, 1);
-		if(ret != HAL_OK)
-		{
-		log_i("HAL_UART_Receive_IT failed");
-		}        
-
-
+    //开启串口空闲中断接收+DMA半满全满中断
+    HAL_StatusTypeDef ret = HAL_OK;
+    ret = HAL_UARTEx_ReceiveToIdle_DMA(&huart1, g_circular_buffer_irq_thread->data, 10);
+	if(ret != HAL_OK)
+	{
+	    log_i("HAL_UARTEx_ReceiveToIdle_DMA failed");
+	}        
+    log_i("HAL_UARTEx_ReceiveToIdle_DMA success");  
     /* Infinite loop */
     for(;;)
     {
+        //接收中断里的触发条件
         xQueueReceive(queue_irq_thread, &receive_data, portMAX_DELAY);
-        log_i(" receive_data = %x", receive_data);    
+        log_i(" front recive data  from irq= [%x]", receive_data);    
+
         if(IRQ_SEND_TO_THREAD == receive_data)
         {
+
             uint32_t send_to_end = FRONT_SEND_TO_THREAD;
             BaseType_t ret_queue = pdTRUE;
+            //发送通知解包队列开始解包
             ret_queue = xQueueGenericSend(queue_irq_rec_A, &send_to_end,0, queueOVERWRITE);
             if(ret_queue != pdTRUE)
             {   
                 log_e("send_to_end failed");
             }
-            log_a("send_to_end success");
+            log_a("front to end send success");
         }
         osDelay(1);
     }
@@ -94,28 +97,9 @@ circular_buffer_t * get_circular_buffer(void)
   * @retval None
   */
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-
-#if 1
-		log_d("HAL_UART_RxCpltCallback is running");
-        uint8_t ret = insert_data(g_circular_buffer_irq_thread, g_data_buffer);
-		BaseType_t        queue_ret = pdFALSE;
-		uint32_t send_to_thread  = IRQ_SEND_TO_THREAD;
-		//发送数据到队列
-		queue_ret = xQueueGenericSendFromISR(queue_irq_rec_A, &send_to_thread,0, queueOVERWRITE);
-		if(queue_ret != pdTRUE)
-		{   
-				log_e("HAL_UART_RxCpltCallback failed");
-		}
-        //开启下一次接收中断
-        HAL_UART_Receive_IT(&huart1, &g_data_buffer, 1);    
-
-#endif        
-		
-		
-
-
-
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
+    log_d("HAL_UARTEx_RxEventCallback is running");
+ 
 
 }
 

@@ -45,5 +45,6 @@ baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrapp
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 baseproject\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+baseproject\main.o: ../Core/Inc/dma.h
 baseproject\main.o: ../Core/Inc/usart.h
 baseproject\main.o: ../Core/Inc/gpio.h

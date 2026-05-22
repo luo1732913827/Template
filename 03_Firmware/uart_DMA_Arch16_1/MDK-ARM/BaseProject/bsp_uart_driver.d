@@ -48,4 +48,4 @@ baseproject\bsp_uart_driver.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 baseproject\bsp_uart_driver.o: ../easylogger/inc/elog.h
 baseproject\bsp_uart_driver.o: ../easylogger/inc/elog_cfg.h
 baseproject\bsp_uart_driver.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
-baseproject\bsp_uart_driver.o: ..\Middlewares\MID_circular_buffer\mid_circular_buffer.h
+baseproject\bsp_uart_driver.o: ../Middlewares/MID_circular_buffer/mid_circular_buffer.h
