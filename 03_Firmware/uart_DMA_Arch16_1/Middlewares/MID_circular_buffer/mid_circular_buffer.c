@@ -146,3 +146,38 @@ uint8_t             get_data         (circular_buffer_t * p_buffer,\
     return 0x00;
 }
 
+/**
+ * @brief get_head_pos.
+ * 
+ *  
+ * @param[in] p_buffer : Pointer to the target of handler.
+ * @param[out] head : Pointer to the head position of the buffer.
+ * 
+* @return      uint8_t : 
+                        0xff:error, the p_buffer is NULL;
+ * 
+ * */
+uint8_t             get_head_pos         (circular_buffer_t * p_buffer,\
+                                                uint32_t * head)
+{
+    if ( NULL == p_buffer )
+    {
+        return 0xFF;
+    }
+    
+    *head = p_buffer->head;
+    
+    return 0x00;
+}
+uint8_t             head_pos_increment         (circular_buffer_t * p_buffer,\
+                                                uint32_t  increament_num)
+{
+    if ( NULL == p_buffer )
+    {
+        return 0xFF;
+    }
+    
+    p_buffer->head += increament_num;
+    
+    return 0x00;
+}

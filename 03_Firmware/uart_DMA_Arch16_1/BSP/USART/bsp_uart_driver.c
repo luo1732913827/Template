@@ -44,7 +44,7 @@ void uart_driver_func(void *argument)
     }
     //开启串口空闲中断接收+DMA半满全满中断
     HAL_StatusTypeDef ret = HAL_OK;
-    ret = HAL_UARTEx_ReceiveToIdle_DMA(&huart1, g_circular_buffer_irq_thread->data, 10);
+    ret = HAL_UARTEx_ReceiveToIdle_DMA(&huart1, g_circular_buffer_irq_thread->data, CIRCULAR_BUFFER_SIZE);
 	if(ret != HAL_OK)
 	{
 	    log_i("HAL_UARTEx_ReceiveToIdle_DMA failed");
@@ -103,4 +103,93 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
 
 }
 
+void dma_half_irq_callback(uint32_t number_of_data)
+{
+    //1.获取当前位置
+    uint32_t head_pos = 0;
+    uint8_t ret = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &head_pos);  
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    //2.获取进入半满中断时,数据已经到达的位置
+    uint32_t current_data_pos = (CIRCULAR_BUFFER_SIZE/2)-1;
+    //3.对 heap进行取余数
+    uint32_t pos_in_buffer = head_pos % (CIRCULAR_BUFFER_SIZE/2);
+    //4.计算当前应该偏移的数量
+    uint32_t move_pos = current_data_pos - pos_in_buffer;
+    //5.更新 head位置
+    head_pos_increment(g_circular_buffer_irq_thread, move_pos);
+    //test head_pos
+    uint32_t test_head_pos = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &test_head_pos);
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    log_i("[half]test_head_pos = [%d]", test_head_pos);
 
+
+}
+void dma_comp_irq_callback(uint32_t number_of_data)
+{
+    //1.获取当前位置
+    uint32_t head_pos = 0;
+    uint8_t ret = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &head_pos);  
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    //2.获取进入全满中断时,数据已经到达的位置
+    uint32_t current_data_pos = CIRCULAR_BUFFER_SIZE - 1;
+    //3.对 heap进行取余数
+    uint32_t pos_in_buffer = head_pos % (CIRCULAR_BUFFER_SIZE);
+    //4.计算当前应该偏移的数量
+    uint32_t move_pos = current_data_pos - pos_in_buffer;
+    //5.更新 head位置
+    head_pos_increment(g_circular_buffer_irq_thread, move_pos);
+    //test head_pos
+    uint32_t test_head_pos = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &test_head_pos);
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    log_i("[comp]test_head_pos = [%d]", test_head_pos);
+
+}  
+void uart_idle_irq_callback(uint32_t number_of_data)
+{
+    //1.获取当前位置
+    uint32_t head_pos = 0;
+    uint8_t ret = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &head_pos);  
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    //2.获取进入全满中断时,数据已经到达的位置
+    uint32_t current_data_pos = number_of_data - 1;
+    //3.对 heap进行取余数
+    uint32_t pos_in_buffer = head_pos % (CIRCULAR_BUFFER_SIZE);
+    //4.计算当前应该偏移的数量
+    uint32_t move_pos = current_data_pos - pos_in_buffer;
+    //5.更新 head位置
+    head_pos_increment(g_circular_buffer_irq_thread, move_pos);
+    //test head_pos
+    uint32_t test_head_pos = 0;
+    ret = get_head_pos(g_circular_buffer_irq_thread, &test_head_pos);
+    if(ret != 0x00)
+    {
+        log_e("get_head_pos failed");
+        return;
+    }
+    log_i("[idle]test_head_pos = [%d]", test_head_pos);    
+}

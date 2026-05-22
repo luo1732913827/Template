@@ -30,3 +30,22 @@ baseproject\stm32f4xx_hal_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 baseproject\stm32f4xx_hal_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 baseproject\stm32f4xx_hal_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 baseproject\stm32f4xx_hal_uart.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+baseproject\stm32f4xx_hal_uart.o: ../BSP/USART/bsp_uart_driver.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+baseproject\stm32f4xx_hal_uart.o: ../Core/Inc/FreeRTOSConfig.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+baseproject\stm32f4xx_hal_uart.o: ../Core/Inc/usart.h
+baseproject\stm32f4xx_hal_uart.o: ../Core/Inc/main.h
+baseproject\stm32f4xx_hal_uart.o: ../easylogger/inc/elog.h
+baseproject\stm32f4xx_hal_uart.o: ../easylogger/inc/elog_cfg.h
+baseproject\stm32f4xx_hal_uart.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+baseproject\stm32f4xx_hal_uart.o: ../Middlewares/MID_circular_buffer/mid_circular_buffer.h
