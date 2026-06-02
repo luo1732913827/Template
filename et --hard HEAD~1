@@ -1,0 +1,32 @@
+[33mcommit d6e09866fb1e743cc46570d931c16e8f4cccc101[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: ly <luo1732913827@qq.com>
+Date:   Fri May 22 19:49:21 2026 +0800
+
+    环形缓冲区+状态机解析数据+全满半满空闲中断处理+算法偏移数据
+
+M	03_Firmware/uart_DMA_Arch16_1/BSP/USART/bsp_uart_driver.c
+M	03_Firmware/uart_DMA_Arch16_1/BSP/USART/bsp_uart_driver.h
+M	03_Firmware/uart_DMA_Arch16_1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject.uvguix.罗一鸣
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject.uvoptx
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject.axf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject.build_log.htm
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject.hex
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject.htm
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject.map
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/BaseProject_BaseProject.dep
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/bsp_uart_driver.crf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/bsp_uart_driver.o
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/freertos.crf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/freertos.o
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/mid_circular_buffer.crf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/mid_circular_buffer.o
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/stm32f4xx_hal_uart.crf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/stm32f4xx_hal_uart.d
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/stm32f4xx_hal_uart.o
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/uart_parse_task.crf
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/BaseProject/uart_parse_task.o
+A	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/EventRecorderStub.scvd
+M	03_Firmware/uart_DMA_Arch16_1/MDK-ARM/JLinkLog.txt
+M	03_Firmware/uart_DMA_Arch16_1/Middlewares/MID_circular_buffer/mid_circular_buffer.c
+M	03_Firmware/uart_DMA_Arch16_1/Middlewares/MID_circular_buffer/mid_circular_buffer.h
