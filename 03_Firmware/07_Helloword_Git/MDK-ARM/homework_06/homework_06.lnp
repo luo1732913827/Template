@@ -32,6 +32,7 @@
 "homework_06\cmsis_os2.o"
 "homework_06\heap_4.o"
 "homework_06\port.o"
+"homework_06\bsp_led_drive.o"
 --library_type=microlib --strict --scatter "homework_06\homework_06.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

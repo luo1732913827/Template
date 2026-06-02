@@ -28,7 +28,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+#include "bsp_led_drive.h"
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -294,28 +294,15 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
+  bsp_led_drive_t led1;
+  led_status_t ret = LED_OK;
+  ret = led_drive_init( &led1,NULL,NULL,NULL );
+    printf("Hellow Eternal Chip\r\n");
   /* Infinite loop */
   for(;;)
   {
-    printf("Hellow Eternal Chip\r\n");
-    //1.先读取按键（PA0)的GPIO的电平，如果电平是高电平，则说明，按键没有被按下。
-    if(HAL_GPIO_ReadPin(Key_GPIO_Port, Key_Pin) == GPIO_PIN_SET)
-    {
-        //什么都不做
-    }
-    //2.如果按键（PA0)的电平为低，则说明按键被按下了。
-    if(HAL_GPIO_ReadPin(Key_GPIO_Port, Key_Pin) == GPIO_PIN_RESET)
-    {
-        //2.1 LED亮起
-        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-        //2.2 延时500ms
-        HAL_Delay(500);
-        //2.3 LED熄灭
-        HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-        //2.4 延时500ms
-        HAL_Delay(500);
-    }
-    
+
+
     osDelay(1);
   }
   /* USER CODE END 5 */
