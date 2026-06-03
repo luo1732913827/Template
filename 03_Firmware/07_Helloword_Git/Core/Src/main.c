@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
+
 
 
 /* Private includes ----------------------------------------------------------*/
@@ -28,7 +28,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#include "bsp_led_drive.h"
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -44,13 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart1;
 
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -59,7 +53,7 @@ const osThreadAttr_t defaultTask_attributes = {
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
-void StartDefaultTask(void *argument);
+
 
 /* USER CODE BEGIN PFP */
  #ifdef __GNUC__
@@ -284,29 +278,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE END 4 */
 
-/* USER CODE BEGIN Header_StartDefaultTask */
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument)
-{
-  /* USER CODE BEGIN 5 */
-  bsp_led_drive_t led1;
-  led_status_t ret = LED_OK;
-  ret = led_drive_init( &led1,NULL,NULL,NULL );
-    printf("Hellow Eternal Chip\r\n");
-  /* Infinite loop */
-  for(;;)
-  {
 
-
-    osDelay(1);
-  }
-  /* USER CODE END 5 */
-}
 
 /**
   * @brief  Period elapsed callback in non blocking mode

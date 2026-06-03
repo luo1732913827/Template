@@ -66,7 +66,7 @@ typedef struct
     proportion_t        proportion_on_off;
     /************目标IO需求*************/
     /*  LED操作接口 */
-    led_operations_t    *const p_led_opes_inst;
+    led_operations_t    *p_led_opes_inst;
     /*  时间基准接口 */
     time_base_ms_t      *p_time_base_ms;
     /************ OS需求*************/
@@ -80,7 +80,7 @@ typedef struct
    }bsp_led_drive_t;
 
 
-led_status_t led_drive_init( bsp_led_drive_t    *const self,
+led_status_t led_drive_inst( bsp_led_drive_t    *const self,
                              led_operations_t   *const led_ops,
                              time_base_ms_t     *const time_base,
 #if  OS_SUPPORTING                           

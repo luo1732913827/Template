@@ -1,6 +1,21 @@
 #include "bsp_led_drive.h"
 
+led_status_t led_drive_init(bsp_led_drive_t    *const self)
+{
+    if( self == NULL )
+    {   
+#if DEBUG
+        DEBUGOUT("LED init params error\n");
+#endif             
+        return LED_ERRORRESOURCE;
+    }       
+#if DEBUG
+        DEBUGOUT("LED init start\n");
+#endif
+// 2.初始化LED驱动      
+    self->p_led_opes_inst->pf_led_off();
 
+}
 /**
  * @brief LED驱动初始化函数
  * 
@@ -16,7 +31,7 @@
  * @retval LED_ERRORRESOURCE  参数为空，资源无效
  * @retval LED_OK             初始化成功（函数体待补充完整实现）
  */
-led_status_t led_drive_init( bsp_led_drive_t    *const self,
+led_status_t led_drive_inst( bsp_led_drive_t    *const self,
                              led_operations_t   *const led_ops,
                              time_base_ms_t     *const time_base,
 #if  OS_SUPPORTING                           
@@ -49,10 +64,18 @@ led_status_t led_drive_init( bsp_led_drive_t    *const self,
 #endif
         return LED_ERRORRESOURCE;
     }  
-    // 2.初始化LED驱动
+    // 2.初始化LED驱动      
 #if DEBUG
-        DEBUGOUT("LED init start\n");
+        DEBUGOUT("LED inst start\n");
 #endif   
+    self->p_led_opes_inst   = led_ops;
+    self->p_time_base_ms    = time_base;
+    self->p_os_time_delay   = os_delay;
+    // 3.初始化LED控制接口
+    self->cycle_time        = 0;
+    self->blink_time        = 0;
+    self->proportion_on_off = PROPORTOON_X_X;
+
 
 }
 

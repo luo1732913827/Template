@@ -31,16 +31,4 @@ homework_06\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 homework_06\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 homework_06\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 homework_06\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-homework_06\main.o: ../Core/Inc/FreeRTOSConfig.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
-homework_06\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 homework_06\main.o: D:\Program Files (x86)\keil\ARM\ARMCC\Bin\..\include\stdio.h
-homework_06\main.o: ..\bsp\led\bsp_led_drive.h
